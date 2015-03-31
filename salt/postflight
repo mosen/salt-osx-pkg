@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo Loading salt-minion service...
+/bin/launchctl load -w /Library/LaunchDaemons/com.saltstack.salt.minion.plist
