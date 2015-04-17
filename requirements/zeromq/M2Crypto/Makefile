@@ -14,7 +14,8 @@ pack-lib: distutils_build l_Python_2.7_site-packages
 	@sudo chmod 755 ${WORK_D}/Library/Python/2.7/site-packages/M2Crypto
 
 distutils_build: unpack_tarball
-	cd ${SCRATCH_D}/M2Crypto-0.22.3; python setup.py build 
+	cd ${SCRATCH_D}/M2Crypto-0.22.3; sudo python setup.py build_ext -I /usr/local/Cellar/openssl/1.0.2a-1/include -L /usr/local/Cellar/openssl/1.0.2a-1/lib
+	cd ${SCRATCH_D}/M2Crypto-0.22.3; sudo python setup.py build
 
 unpack_tarball: M2Crypto.tar.gz
 	sudo ${TAR} xvf M2Crypto.tar.gz -C ${SCRATCH_D}

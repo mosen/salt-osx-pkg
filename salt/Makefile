@@ -20,7 +20,7 @@ unpack-salt-${PACKAGE_VERSION}:
 	@sudo ${TAR} xzf salt.tar.gz
 
 build-salt-${PACKAGE_VERSION}: unpack-salt-${PACKAGE_VERSION}
-	cd salt-${PACKAGE_VERSION}; python setup.py build 
+	cd salt-${PACKAGE_VERSION}; sudo python setup.py build
 
 pack-Library-Python-${PYTHON_VERSION}-site-packages-salt: build-salt-${PACKAGE_VERSION} l_Python_${PYTHON_VERSION}_site-packages
 	@sudo ${CP} -Rf salt-${PACKAGE_VERSION}/build/lib/salt ${WORK_D}/Library/Python/${PYTHON_VERSION}/site-packages

@@ -6,10 +6,10 @@ REVERSE_DOMAIN=com.github.mosen.luggage.MarkupSafe
 PACKAGE_VERSION=0.23
 TARBALL_LOCATION=https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${PACKAGE_VERSION}.tar.gz
 PAYLOAD=\
-	pack-lib
+	pack-MarkupSafe
 
 
-pack-lib: distutils_build l_Python_2.7_site-packages
+pack-MarkupSafe: distutils_build l_Python_2.7_site-packages
 	@sudo ${CP} -Rf ${SCRATCH_D}/MarkupSafe-${PACKAGE_VERSION}/build/lib.macosx-10.9-intel-2.7/MarkupSafe ${WORK_D}/Library/Python/2.7/site-packages
 	@sudo chown root:wheel ${WORK_D}/Library/Python/2.7/site-packages/MarkupSafe
 	@sudo chmod 755 ${WORK_D}/Library/Python/2.7/site-packages/MarkupSafe
