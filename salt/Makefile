@@ -2,9 +2,9 @@ USE_PKGBUILD=1
 include /usr/local/share/luggage/luggage.make
 include ../include/python.make
 
-TITLE=salt.macosx-py${PYTHON_VERSION}
+TITLE=salt
 REVERSE_DOMAIN=com.github.mosen.luggage.salt
-TARBALL_LOCATION=https://pypi.python.org/packages/source/s/salt/salt-2014.7.2.tar.gz#md5=64607e73055626509c59e51fe6feee88
+TARBALL_LOCATION=https://pypi.python.org/packages/source/s/salt/salt-${PACKAGE_VERSION}.tar.gz#md5=64607e73055626509c59e51fe6feee88
 TARBALL=salt.tar.gz
 PACKAGE_VERSION=2014.7.2
 PAYLOAD=\

@@ -1,8 +1,8 @@
 include /usr/local/share/luggage/luggage.make
 
-TITLE=requests.macosx-py2.7
+TITLE=requests
 REVERSE_DOMAIN=com.github.mosen.luggage.requests
-TARBALL_LOCATION=https://pypi.python.org/packages/source/r/requests/requests-2.6.0.tar.gz#md5=25287278fa3ea106207461112bb37050
+TARBALL_LOCATION=https://pypi.python.org/packages/source/r/requests/requests-${PACKAGE_VERSION}.tar.gz#md5=25287278fa3ea106207461112bb37050
 PACKAGE_VERSION=2.6.0
 PAYLOAD=\
 	pack-requests

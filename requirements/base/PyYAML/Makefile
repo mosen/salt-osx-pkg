@@ -1,10 +1,10 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=PyYAML.macosx-py2.7
+TITLE=PyYAML
 REVERSE_DOMAIN=com.github.mosen.luggage.PyYAML
 PACKAGE_VERSION=3.11
-TARBALL_LOCATION=https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz#md5=f50e08ef0fe55178479d3a618efe21db
+TARBALL_LOCATION=https://pypi.python.org/packages/source/P/PyYAML/PyYAML-${PACKAGE_VERSION}.tar.gz#md5=f50e08ef0fe55178479d3a618efe21db
 
 PAYLOAD=\
 	pack-PyYAML

@@ -1,7 +1,7 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=Jinja2.macosx-py2.7
+TITLE=Jinja2
 REVERSE_DOMAIN=com.github.mosen.luggage.Jinja2
 PACKAGE_VERSION=2.7.3
 TARBALL_LOCATION=https://pypi.python.org/packages/source/J/Jinja2/Jinja2-${PACKAGE_VERSION}.tar.gz

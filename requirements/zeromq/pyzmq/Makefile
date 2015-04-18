@@ -1,7 +1,7 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=pyzmq.macosx-py2.7
+TITLE=pyzmq
 REVERSE_DOMAIN=com.github.mosen.luggage.pyzmq
 PACKAGE_VERSION=14.5.0
 TARBALL_LOCATION=https://pypi.python.org/packages/source/p/pyzmq/pyzmq-${PACKAGE_VERSION}.tar.gz#md5=8d3351a8ca2ca2a272a3f96bcb963e41

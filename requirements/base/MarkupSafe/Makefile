@@ -1,7 +1,7 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=MarkupSafe.macosx-py2.7
+TITLE=MarkupSafe
 REVERSE_DOMAIN=com.github.mosen.luggage.MarkupSafe
 PACKAGE_VERSION=0.23
 TARBALL_LOCATION=https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-${PACKAGE_VERSION}.tar.gz

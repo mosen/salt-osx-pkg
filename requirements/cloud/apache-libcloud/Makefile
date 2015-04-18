@@ -1,7 +1,7 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=apache-libcloud.macosx-py2.7
+TITLE=apache-libcloud
 REVERSE_DOMAIN=com.github.mosen.luggage.apache-libcloud
 PACKAGE_VERSION=0.17.0
 TARBALL_LOCATION=https://pypi.python.org/packages/source/a/apache-libcloud/apache-libcloud-${PACKAGE_VERSION}.tar.gz

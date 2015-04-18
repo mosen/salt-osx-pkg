@@ -1,7 +1,7 @@
 include /usr/local/share/luggage/luggage.make
 include ../../../include/python.make
 
-TITLE=pycrypto.macosx-py2.7
+TITLE=pycrypto
 REVERSE_DOMAIN=com.github.mosen.luggage.pycrypto
 PACKAGE_VERSION=2.6.1
 TARBALL_LOCATION=https://pypi.python.org/packages/source/p/pycrypto/pycrypto-${PACKAGE_VERSION}.tar.gz

@@ -18,6 +18,7 @@ The build process has the following dependencies:
 - SWIG via Homebrew `brew install swig`
 - libyaml via Homebrew `brew install libyaml`
 - OpenSSL via Homebrew `brew install openssl`
+- ZeroMQ/libzmq via Homebrew `brew install zeromq`
 
 ## Building
 
@@ -26,3 +27,15 @@ At the moment, only part of the build process is done, by executing
     ./build.sh
     
 In this repository.
+
+## Binary Extensions
+
+Some extensions will be linked against the os they are built on:
+
+- M2Crypto (linked against openssl)
+- MarkupSafe (speedups)
+- msgpack-python
+- pycrypto (several binary implementations of encryption algorithms)
+- PyYAML (optional binary)
+- pyzmq (cython links against libzmq)
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <title>SaltStack 2014.7.2</title>
+    <background alignment="topleft" file="background.png" scaling="none" />
+    <welcome file="welcome.rtf" mime-type="application/rtf" />
+    <readme file="readme.rtf" mime-type="application/rtf" />
+    <license file="LICENSE" mime-type="text/plain" />
+    <conclusion file="conclusion.rtf" mime-type="application/rtf" />
+    <pkg-ref id="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.requests.requests.macosx-py2.7"/>
+    <pkg-ref id="com.github.mosen.luggage.salt.salt.macosx-py2.7"/>
+    <options customize="never" require-scripts="false"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.requests.requests.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.salt.salt.macosx-py2.7"/>
+        </line>
+        <line choice="ZeroMQ Transport">
+            <line choice="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
+        </line>
+        <line choice="RAET Transport">
+            <line choice="com.github.mosen.luggage.libnacl-py2.7"/>
+            <line choice="com.github.mosen.luggage.ioflo-py2.7"/>
+            <line choice="com.github.mosen.luggage.raet-py2.7"/>
+        </line>
+        <line choice="salt-cloud support">
+            <line choice="com.github.mosen.luggage.apache-libcloud-py2.7"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7" version="2.7.3" onConclusion="none">Jinja2.macosx-py2.7-2.7.3.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7" version="0.22.3" onConclusion="none">M2Crypto.macosx-py2.7-0.22.3.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7" version="0.23" onConclusion="none">MarkupSafe.macosx-py2.7-0.23.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7" version="0.4.6" onConclusion="none">msgpack-python.macosx-py2.7-0.4.6.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7" version="2.6.1" onConclusion="none">pycrypto.macosx-py2.7-2.6.1.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7" version="3.11" onConclusion="none">PyYAML.macosx-py2.7-3.11.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7" version="14.5.0" onConclusion="none">pyzmq.macosx-py2.7-14.5.0.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.requests.requests.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.requests.requests.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.requests.requests.macosx-py2.7" version="2.6.0" onConclusion="none">requests.macosx-py2.7-2.6.0.pkg</pkg-ref>
+    <choice id="com.github.mosen.luggage.salt.salt.macosx-py2.7" visible="false">
+        <pkg-ref id="com.github.mosen.luggage.salt.salt.macosx-py2.7"/>
+    </choice>
+    <pkg-ref id="com.github.mosen.luggage.salt.salt.macosx-py2.7" version="2014.7.2" onConclusion="none">salt.macosx-py2.7-2014.7.2.pkg</pkg-ref>
+    <volume-check script="must be boot volume" />
+    <script><![CDATA[
+
+// ... JavaScript ...
+
+ ]]></script>
+</installer-gui-script>

@@ -4,6 +4,7 @@
 # brew install swig
 # brew install libyaml
 # brew install openssl
+# brew install zeromq
 
 
 BUILD_DIR=`pwd`

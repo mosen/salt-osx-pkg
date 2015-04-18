@@ -1,8 +1,8 @@
 include /usr/local/share/luggage/luggage.make
 
-TITLE=msgpack-python.macosx-py2.7
+TITLE=msgpack-python
 REVERSE_DOMAIN=com.github.mosen.luggage.msgpack-python
-TARBALL_LOCATION=https://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-0.4.6.tar.gz#md5=8b317669314cf1bc881716cccdaccb30
+TARBALL_LOCATION=https://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-${PACKAGE_VERSION}.tar.gz#md5=8b317669314cf1bc881716cccdaccb30
 PACKAGE_VERSION=0.4.6
 PAYLOAD=\
 	pack-msgpack
