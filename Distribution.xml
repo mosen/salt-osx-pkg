@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <installer-gui-script minSpecVersion="1">
-    <title>SaltStack 2014.7.2</title>
-    <background alignment="topleft" file="background.png" scaling="none" />
-    <welcome file="welcome.rtf" mime-type="application/rtf" />
-    <readme file="readme.rtf" mime-type="application/rtf" />
-    <license file="LICENSE" mime-type="text/plain" />
-    <conclusion file="conclusion.rtf" mime-type="application/rtf" />
     <pkg-ref id="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7"/>
     <pkg-ref id="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
     <pkg-ref id="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7"/>
@@ -19,24 +13,14 @@
     <choices-outline>
         <line choice="default">
             <line choice="com.github.mosen.luggage.Jinja2.Jinja2.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
             <line choice="com.github.mosen.luggage.MarkupSafe.MarkupSafe.macosx-py2.7"/>
             <line choice="com.github.mosen.luggage.msgpack-python.msgpack-python.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7"/>
             <line choice="com.github.mosen.luggage.PyYAML.PyYAML.macosx-py2.7"/>
+            <line choice="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7"/>
             <line choice="com.github.mosen.luggage.requests.requests.macosx-py2.7"/>
             <line choice="com.github.mosen.luggage.salt.salt.macosx-py2.7"/>
-        </line>
-        <line choice="ZeroMQ Transport">
-            <line choice="com.github.mosen.luggage.pyzmq.pyzmq.macosx-py2.7"/>
-            <line choice="com.github.mosen.luggage.pycrypto.pycrypto.macosx-py2.7"/>
-            <line choice="com.github.mosen.luggage.M2Crypto.M2Crypto.macosx-py2.7"/>
-        </line>
-        <line choice="RAET Transport">
-            <line choice="com.github.mosen.luggage.libnacl-py2.7"/>
-            <line choice="com.github.mosen.luggage.ioflo-py2.7"/>
-            <line choice="com.github.mosen.luggage.raet-py2.7"/>
-        </line>
-        <line choice="salt-cloud support">
-            <line choice="com.github.mosen.luggage.apache-libcloud-py2.7"/>
         </line>
     </choices-outline>
     <choice id="default"/>
@@ -76,10 +60,4 @@
         <pkg-ref id="com.github.mosen.luggage.salt.salt.macosx-py2.7"/>
     </choice>
     <pkg-ref id="com.github.mosen.luggage.salt.salt.macosx-py2.7" version="2014.7.2" onConclusion="none">salt.macosx-py2.7-2014.7.2.pkg</pkg-ref>
-    <volume-check script="must be boot volume" />
-    <script><![CDATA[
-
-// ... JavaScript ...
-
- ]]></script>
 </installer-gui-script>
