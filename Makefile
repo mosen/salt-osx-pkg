@@ -78,9 +78,10 @@ $(PKGROOTS)/sodium64/libsodium.dylib: $(CACHE)/libsodium-1.0.10
 	cd $(CACHE)/libsodium-1.0.10; CFLAGS='-arch x86_64' LDFLAGS='-Xlinker -install_name -Xlinker $(PREFIX)/lib/libsodium.13.dylib' ./configure --prefix=$(PREFIX)
 	cd $(CACHE)/libsodium-1.0.10; make && make DESTDIR="$(PKGROOTS)/sodium64" install
 
+# TODO: ZeroMQ not linking to libsodium from sodium target
 build_zeromq:
 	cd $(CACHE)/zeromq-4.1.4; ./autogen.sh && PKG_CONFIG_PATH=$(PKG_CONFIG_PATH) ./configure --prefix=$(PREFIX) --with-libsodium && make -j 4
-	cd $(CACHE)/zeromq-4.1.4; make install
+	cd $(CACHE)/zeromq-4.1.4; make DESTDIR="$(PKGROOTS)/zeromq" install
 
 lipo_libsodium: $(PKGROOTS)/sodium32$(PREFIX)/lib/libsodium.dylib $(PKGROOTS)/sodium64$(PREFIX)/lib/libsodium.dylib
 	@mkdir -p $(PKGROOTS)/sodium/usr/local/salt
@@ -91,14 +92,17 @@ lipo_libsodium: $(PKGROOTS)/sodium32$(PREFIX)/lib/libsodium.dylib $(PKGROOTS)/so
 
 build: ${CACHE}/openssl-1.0.2g/libssl.a lipo_libsodium
 	
-$(DISTROOT)/pkgs/libsodium-$(SODIUM_VERSION).pkg: lipo_libsodium
-	pkgbuild --root $(PKGROOTS)/sodium --identifier com.github.mosen.libsodium --version "$(SODIUM_VERSION)" --ownership recommended $(DISTROOT)/pkgs/libsodium-$(SODIUM_VERSION).pkg	
+$(DISTROOT)/libsodium-$(SODIUM_VERSION).pkg: lipo_libsodium
+	pkgbuild --root $(PKGROOTS)/sodium --identifier com.github.mosen.libsodium --version "$(SODIUM_VERSION)" --ownership recommended $(DISTROOT)/libsodium-$(SODIUM_VERSION).pkg	
 
-$(DISTROOT)/pkgs/OpenSSL-1.0.2g.pkg: build_openssl
-	pkgbuild --root $(PKGROOTS)/openssl --identifier com.github.mosen.openssl --version "1.0.2g" --ownership recommended $(DISTROOT)/pkgs/OpenSSL-1.0.2g.pkg
+$(DISTROOT)/OpenSSL-1.0.2g.pkg: build_openssl
+	pkgbuild --root $(PKGROOTS)/openssl --identifier com.github.mosen.openssl --version "1.0.2g" --ownership recommended $(DISTROOT)/OpenSSL-1.0.2g.pkg
+
+$(DISTROOT)/zeromq-4.1.4.pkg: build_zeromq
+	pkgbuild --root $(PKGROOTS)/zeromq --identifier com.github.mosen.zeromq --version "4.1.4" --ownership recommended $(DISTROOT)/zeromq-4.1.4.pkg
 
 
-deps: $(DISTROOT)/pkgs/libsodium-$(SODIUM_VERSION).pkg $(DISTROOT)/pkgs/OpenSSL-1.0.2g.pkg
+deps: $(DISTROOT)/libsodium-$(SODIUM_VERSION).pkg $(DISTROOT)/OpenSSL-1.0.2g.pkg $(DISTROOT)/zeromq-4.1.4.pkg
   
 pips:
 	@mkdir -p $(DISTROOT)
@@ -115,3 +119,5 @@ pips:
 	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen certifi
 	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen salt 
  
+dist: deps pips
+	productbuild --distribution Distribution.xml --package-path $(DISTROOT) salt.pkg
