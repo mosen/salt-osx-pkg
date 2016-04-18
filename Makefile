@@ -119,5 +119,5 @@ pips:
 	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen certifi
 	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen salt 
  
-dist: deps pips
+dist:
 	productbuild --distribution Distribution.xml --package-path $(DISTROOT) salt.pkg
