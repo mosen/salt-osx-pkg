@@ -23,6 +23,7 @@ LIBSODIUM_URL="https://download.libsodium.org/libsodium/releases/LATEST.tar.gz"
 SODIUM_VERSION=1.0.10
 LIBYAML_URL="http://pyyaml.org/download/libyaml/yaml-0.1.5.tar.gz"
 ZEROMQ_URL="http://download.zeromq.org/zeromq-4.1.4.tar.gz"
+FPM_PIP_OPTS=--osxpkg-identifier-prefix com.github.mosen --python-install-bin $(PREFIX)/bin --python-install-lib $(PREFIX)/lib/python2.7/site-packages --python-install-data $(PREFIX)/share 
 
 # Broken
 verify:
@@ -106,18 +107,21 @@ deps: $(DISTROOT)/libsodium-$(SODIUM_VERSION).pkg $(DISTROOT)/OpenSSL-1.0.2g.pkg
   
 pips:
 	@mkdir -p $(DISTROOT)
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen apache-libcloud
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen jinja2
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen markupsafe
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen msgpack-python
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen pycrypto
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen requests
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen backports.ssl_match_hostname
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen backports_abc
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen tornado
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen singledispatch
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen certifi
-	fpm -s python -t osxpkg -p $(DISTROOT) --osxpkg-identifier-prefix com.github.mosen salt 
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) apache-libcloud
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) jinja2
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) markupsafe
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) msgpack-python
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) pycrypto
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) requests
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) backports.ssl_match_hostname
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) backports_abc
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) tornado
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) singledispatch
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) certifi
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) salt 
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) M2Crypto
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) PyYAML
+	fpm -s python -t osxpkg -p $(DISTROOT) $(FPM_PIP_OPTS) pyzmq
  
 dist:
 	productbuild --distribution Distribution.xml --package-path $(DISTROOT) salt.pkg
