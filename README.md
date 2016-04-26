@@ -1,5 +1,12 @@
 # salt-osx-pkg
 
+## Will be deprecated
+
+For Salt 2016.03 there is a package build script included in the salt source.
+SaltStack will also release a native package.
+
+## Overview
+
 SaltStack OSX Binary Distribution Package for OS X
 
 Currently, SaltStack lacks a native package for OS X.
